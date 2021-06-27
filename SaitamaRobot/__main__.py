@@ -53,28 +53,28 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 *Eureka! {}, myself {}!* 
-*An Anime themed group management bot from* [Steins;Gate](https://anilist.co/anime/9253)!!
-
+*I am An Anime themed group management bot!!*
+═════════════════════════════
+*Maintained By* @RxyMX
+═════════════════════════════
 • *Uptime:* `{}`
 • `{}` *users, across* `{}` *chats.*
 """
 
 HELP_STRINGS = """
 *{} comes with:*
-*AI Chatbot*, *Anime*, *Music*, *Notes*, *Filters*, *NSFW* *and more!*
+*Greetings*, *Anime*, *Music*, *Notes*, *Filters*, *NSFW* *and more!*
 
 🎛 *All commands can either be used with* `/` *or* `!`.
-🎛 *Reach out for support:* @KurisuSupport [.](https://telegra.ph/file/2291942331f135e3292ee.png)
+🎛 *Reach out for support:* @OdaSupport [.](https://telegra.ph/file/b3e970a4d031d58749308.jpg)
 """.format(
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-KURISU_IMG = "https://telegra.ph/file/6152bf2f73ca8ea30772a.png"
-KURISUIMGSTART = "https://telegra.ph/file/bd01a439fefb53170b36f.gif"
+KURISU_IMG = "https://telegra.ph/file/6f3ef552043d47034bf48.jpg"
+KURISUIMGSTART = "https://telegra.ph/file/6f3ef552043d47034bf48.jpg"
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-You can donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+DONATE_STRING = """I'm free for everyone! >_<"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -195,7 +195,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="➕ Add Kurisu To Your Group",
+                            text="➕ Add Oda To Your Group",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
@@ -205,19 +205,19 @@ def start(update: Update, context: CallbackContext):
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
                              text="🎉 Updates",
-                             url="https://t.me/steinsupdates"),
+                             url="https://t.me/OdaUpdate"),
                          InlineKeyboardButton(
                              text="🗃 Guide",
-                             url="https://t.me/Steinsupdates/7"),
+                             url="https://UserLazy.github.io/UserLazy"),
               
                     ],
                      [
                         InlineKeyboardButton(
                              text="Anime Chat",
-                             url="https://t.me/ias_chats"),                    
+                             url="https://t.me/Grup_Anime_Chat"),                    
                         InlineKeyboardButton(
                              text="Help & Commands",
-                             url="https://t.me/Kurisu_Makise_Robot?start=help"),      
+                             url="https://t.me/OdaRobot?start=help"),      
                     ]]))
     else:
         update.effective_message.reply_video(
@@ -541,7 +541,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[I am now online!](https://telegra.ph/file/26aeb38f38eb8c819e423.mp4)", parse_mode=ParseMode.MARKDOWN)
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[I am now online!](https://telegra.ph/file/b3e970a4d031d58749308.jpg)", parse_mode=ParseMode.MARKDOWN)
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
@@ -585,7 +585,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Kurisu Makise is deployed sucessfully...")
+        LOGGER.info("Oda Nobunaga is deployed sucessfully...")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
