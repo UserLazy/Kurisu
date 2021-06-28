@@ -8,7 +8,6 @@ import telegram.ext as tg
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 from pymongo import MongoClient
-from odmantic import AIOEngine
 from motor import motor_asyncio
 from telethon import TelegramClient
 from telethon.sessions import MemorySession
