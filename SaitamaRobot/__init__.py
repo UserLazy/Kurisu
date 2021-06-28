@@ -210,15 +210,6 @@ else:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
 
-
-from SaitamaRobot.modules.sql import SESSION
-
-updater = tg.Updater(
-    TOKEN,
-    workers=min(32, os.cpu_count() + 4),
-    request_kwargs={"read_timeout": 10, "connect_timeout": 10},
-    persistence=PostgresPersistence(SESSION),
-)
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
 dispatcher = updater.dispatcher
 mongodb = MongoClient(MONGO_URI, MONGO_PORT)[MONGO_DB]
